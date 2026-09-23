@@ -15,8 +15,6 @@ import { Route as EmailRouteImport } from './routes/email'
 import { Route as PlannerRouteImport } from './routes/planner'
 import { Route as ResearchRouteImport } from './routes/research'
 import { Route as ApiPublicAiRouteImport } from './routes/api/public/ai'
-import { Route as ApiPublicPingRouteImport } from './routes/api/public/ping'
-import { Route as ApiPublicPing2RouteImport } from './routes/api/public/ping2'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -48,16 +46,6 @@ const ApiPublicAiRoute = ApiPublicAiRouteImport.update({
   path: '/api/public/ai',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicPingRoute = ApiPublicPingRouteImport.update({
-  id: '/api/public/ping',
-  path: '/api/public/ping',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiPublicPing2Route = ApiPublicPing2RouteImport.update({
-  id: '/api/public/ping2',
-  path: '/api/public/ping2',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -66,8 +54,6 @@ export interface FileRoutesByFullPath {
   '/planner': typeof PlannerRoute
   '/research': typeof ResearchRoute
   '/api/public/ai': typeof ApiPublicAiRoute
-  '/api/public/ping': typeof ApiPublicPingRoute
-  '/api/public/ping2': typeof ApiPublicPing2Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -76,8 +62,6 @@ export interface FileRoutesByTo {
   '/planner': typeof PlannerRoute
   '/research': typeof ResearchRoute
   '/api/public/ai': typeof ApiPublicAiRoute
-  '/api/public/ping': typeof ApiPublicPingRoute
-  '/api/public/ping2': typeof ApiPublicPing2Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -87,30 +71,13 @@ export interface FileRoutesById {
   '/planner': typeof PlannerRoute
   '/research': typeof ResearchRoute
   '/api/public/ai': typeof ApiPublicAiRoute
-  '/api/public/ping': typeof ApiPublicPingRoute
-  '/api/public/ping2': typeof ApiPublicPing2Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/chat'
-    | '/email'
-    | '/planner'
-    | '/research'
-    | '/api/public/ai'
-    | '/api/public/ping'
-    | '/api/public/ping2'
+    '/' | '/chat' | '/email' | '/planner' | '/research' | '/api/public/ai'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/chat'
-    | '/email'
-    | '/planner'
-    | '/research'
-    | '/api/public/ai'
-    | '/api/public/ping'
-    | '/api/public/ping2'
+  to: '/' | '/chat' | '/email' | '/planner' | '/research' | '/api/public/ai'
   id:
     | '__root__'
     | '/'
@@ -119,8 +86,6 @@ export interface FileRouteTypes {
     | '/planner'
     | '/research'
     | '/api/public/ai'
-    | '/api/public/ping'
-    | '/api/public/ping2'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -130,8 +95,6 @@ export interface RootRouteChildren {
   PlannerRoute: typeof PlannerRoute
   ResearchRoute: typeof ResearchRoute
   ApiPublicAiRoute: typeof ApiPublicAiRoute
-  ApiPublicPingRoute: typeof ApiPublicPingRoute
-  ApiPublicPing2Route: typeof ApiPublicPing2Route
 }
 
 declare module '@tanstack/react-router' {
@@ -178,20 +141,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicAiRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/ping': {
-      id: '/api/public/ping'
-      path: '/api/public/ping'
-      fullPath: '/api/public/ping'
-      preLoaderRoute: typeof ApiPublicPingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/public/ping2': {
-      id: '/api/public/ping2'
-      path: '/api/public/ping2'
-      fullPath: '/api/public/ping2'
-      preLoaderRoute: typeof ApiPublicPing2RouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -202,8 +151,6 @@ const rootRouteChildren: RootRouteChildren = {
   PlannerRoute: PlannerRoute,
   ResearchRoute: ResearchRoute,
   ApiPublicAiRoute: ApiPublicAiRoute,
-  ApiPublicPingRoute: ApiPublicPingRoute,
-  ApiPublicPing2Route: ApiPublicPing2Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
