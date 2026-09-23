@@ -1,4 +1,4 @@
-# Smart Work Assistant
+# AI Productivity Hub
 
 Build a polished, responsive SaaS web app called "AI Workplace Productivity Assistant". No custom backend. Use Lovable AI for real, context-specific, streamed responses, never canned or placeholder AI text. All buttons and features must work.
 
