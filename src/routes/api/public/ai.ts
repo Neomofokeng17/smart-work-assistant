@@ -68,17 +68,11 @@ export const Route = createFileRoute("/api/public/ai")({
 
         const decoder = new TextDecoder();
         const encoder = new TextEncoder();
-        const reader = upstream.body.getReader();
         let buffer = "";
 
-        const stream = new ReadableStream<Uint8Array>({
-          async pull(controller) {
-            const { done, value } = await reader.read();
-            if (done) {
-              controller.close();
-              return;
-            }
-            buffer += decoder.decode(value, { stream: true });
+        const transform = new TransformStream<Uint8Array, Uint8Array>({
+          transform(chunk, controller) {
+            buffer += decoder.decode(chunk, { stream: true });
             const lines = buffer.split("\n");
             buffer = lines.pop() ?? "";
             for (const line of lines) {
@@ -96,10 +90,9 @@ export const Route = createFileRoute("/api/public/ai")({
               }
             }
           },
-          cancel(reason) {
-            return reader.cancel(reason);
-          },
         });
+
+        const stream = upstream.body.pipeThrough(transform);
 
         return new Response(stream, {
           headers: {
