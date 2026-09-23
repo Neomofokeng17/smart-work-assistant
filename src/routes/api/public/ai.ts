@@ -45,7 +45,6 @@ export const Route = createFileRoute("/api/public/ai")({
             "Lovable-API-Key": apiKey,
             "X-Lovable-AIG-SDK": "fetch",
           },
-          signal: request.signal,
           body: JSON.stringify({
             model: "openai/gpt-6-astra",
             instructions: body.system ?? undefined,
