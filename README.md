@@ -135,3 +135,15 @@ Clone the repository:
 
 ```bash
 git clone <repository-url>
+
+## 👩🏽‍💻 Author
+
+**Neo Mofokeng**
+
+BSc Biomedicine | AI & Digital Productivity
+
+---
+
+### ⭐ AI Workplace Productivity Assistant
+
+**Write smarter. Plan better. Research faster.**
