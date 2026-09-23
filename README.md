@@ -1,46 +1,137 @@
-# AI Productivity Hub
+# AI Workplace Productivity Assistant
 
-Build a polished, responsive SaaS web app called "AI Workplace Productivity Assistant". No custom backend. Use Lovable AI for real, context-specific, streamed responses, never canned or placeholder AI text. All buttons and features must work.
+A modern, responsive AI-powered SaaS web application designed to help users work smarter, organise tasks, communicate professionally, and process information more efficiently.
 
-DESIGN: Palette: dark pink #C2185B (buttons, accents) and baby pink #F8BBD0 (highlights, dark-mode text). Light mode background #FFF7FA; dark mode background deep plum #1A0B14 with readable light text. Inter font, glassmorphism cards, gradient accents, rounded-2xl corners, soft shadows, animated gradient hero, soft blurred pink background shapes, hover-lift cards, fade-in transitions, skeleton loaders, empty states, light/dark toggle, collapsible sidebar, top bar, mobile-responsive layout.
+The **AI Workplace Productivity Assistant** combines four workplace productivity tools in one interface: an AI email generator, task planner, research assistant, and contextual AI chatbot.
 
-DASHBOARD: Hero "Your AI workplace assistant" with quick-action buttons. Stat cards (hours saved, tasks completed, emails drafted) calculated from real usage and labelled as estimates. Feature cards linking to each tool.
+## Features
 
-TOOLS:
+### Smart Email Generator
+Generate professional, context-specific workplace emails.
 
-1. Smart Email Generator: recipient, purpose, key points, tone (Formal/Friendly/Persuasive), audience (Client/Manager/Team). Generate an editable subject and email.
+- Recipient and purpose inputs
+- Key points and context
+- Formal, Friendly, and Persuasive tones
+- Client, Manager, and Team audiences
+- Editable subject and email body
+- Copy, regenerate, and download options
 
-2. AI Task Planner: tasks, deadlines, importance → daily/weekly optimised schedule, Eisenhower Matrix (urgent/important), priorities, time-management tips.
+### AI Task Planner
+Turn tasks and deadlines into an organised schedule.
 
-3. AI Research Assistant: topic or pasted text → simple-language summary, key insights, recommendations, key terms. Never fabricate sources or facts.
+- Daily and weekly planning
+- Deadline and importance analysis
+- Eisenhower Matrix prioritisation
+- Suggested task order
+- Time-management recommendations
+- Editable AI-generated plans
 
-4. AI Chat: modern chat UI with streamed replies, markdown rendering, contextual memory, typing animation, suggestion chips, new chat, conversation history.
+### AI Research Assistant
+Transform complex information into clear, useful insights.
 
-AI: Give each tool a structured dynamic prompt (role + user context + task + output format + constraints). Add a collapsible "View prompt used" on every output.
+- Analyse a research topic or pasted text
+- Plain-language summaries
+- Key insights
+- Recommendations
+- Key-term explanations
+- Designed to avoid fabricated sources and facts
 
-OUTPUTS: All generated content is editable with Copy, Regenerate and Download (.txt) actions. Include loading/error states and toast confirmations. Save history, stats, chats and theme in local storage.
+### AI Chat
+A contextual workplace AI assistant.
 
-RESPONSIBLE AI: Persistent banner: "AI-generated content may contain errors; please review before use." Add a short verification reminder below every AI output.
+- Streamed AI responses
+- Markdown rendering
+- Conversation context
+- Suggestion chips
+- Typing and loading animations
+- New chat functionality
+- Conversation history
 
-Build a functional app, not a mockup. Prioritise, in order: working AI generation, navigation, responsive layout, then visual polish.
+## AI Integration
 
-This project was built with [Lovable](https://lovable.dev).
+The application uses **Lovable AI** to generate dynamic, context-specific responses based on user input.
 
-## Build with Lovable
+Each AI tool uses structured prompts containing:
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/891e0213-c747-49c3-a429-ea00def7d299).
+- Role
+- User context
+- Task
+- Expected output format
+- Constraints
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Users can also expand **“View prompt used”** to understand the application-level instructions used to generate their response.
 
-## Development
+## Design
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+The interface follows a modern SaaS design system with:
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+- Dark Pink `#C2185B`
+- Baby Pink `#F8BBD0`
+- Light Background `#FFF7FA`
+- Deep Plum Dark Background `#1A0B14`
+- Inter typography
+- Glassmorphism cards
+- Gradient accents
+- Responsive navigation
+- Light and dark modes
+- Skeleton loaders
+- Hover and fade animations
+- Mobile-responsive layouts
+
+## Dashboard
+
+The dashboard provides quick access to all productivity tools and displays estimated usage statistics including:
+
+- Hours saved
+- Tasks completed
+- Emails drafted
+
+Statistics are calculated from application usage rather than randomly generated values.
+
+## Local Storage
+
+No custom backend is required.
+
+Local storage is used where appropriate to preserve:
+
+- AI output history
+- Chat conversations
+- Usage statistics
+- Theme preference
+
+## AI Output Controls
+
+Generated outputs can be:
+
+- Edited
+- Copied
+- Regenerated
+- Downloaded as `.txt`
+
+The interface also includes loading states, error handling, empty states, and toast confirmations.
+
+## Responsible AI
+
+A persistent notice reminds users:
+
+> **AI-generated content may contain errors; please review before use.**
+
+AI outputs also include a verification reminder encouraging users to check important facts, dates, figures, and workplace information before relying on generated content.
+
+The Research Assistant is instructed not to fabricate sources, references, or factual information.
+
+## Built With
+
+- Lovable
+- Lovable AI
+- React
+- TypeScript
+- Tailwind CSS
+- Local Storage
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
